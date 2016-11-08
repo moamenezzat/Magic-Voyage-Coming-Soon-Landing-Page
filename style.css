@@ -1,13 +1,13 @@
 @font-face {
     font-family: 'aspergit';
-    src: url('Sources/Aspergit Web/aspergit_bold-webfont.woff2') format('woff2'), url('Sources/Aspergit Web/aspergit_bold-webfont.woff') format('woff');
+    src: url('Aspergit Web/aspergit_bold-webfont.woff2') format('woff2'), url('Sources/Aspergit Web/aspergit_bold-webfont.woff') format('woff');
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'aspergit';
-    src: url('Sources/Aspergit Web/aspergit-webfont.woff2') format('woff2'), url('Sources/Aspergit Web/aspergit-webfont.woff') format('woff');
+    src: url('Aspergit Web/aspergit-webfont.woff2') format('woff2'), url('Sources/Aspergit Web/aspergit-webfont.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 }
@@ -58,11 +58,13 @@ body:before{
   position: relative;
   z-index: 5;
   color: #0E75BC;
-  font-size: 80px;
+  font-size: calc(16px + (64)*(100vw - 320px)/(1920 - 320));
   text-transform: uppercase;
+  margin: 0;
 }
 .container .logo{
-
+  width: 60%;
+  margin: 0px auto;
 }
 
 .svg-container{
@@ -74,9 +76,25 @@ body:before{
     left: 0;
 
 }
-/*.right{
-    transform: translate(400px, 200px);
+.cover{
+  height: 100%;
+  width: auto;
 }
-.left{
-  transform: translate(-400px, -200px);
-}*/
+.b, .a{
+  transition: all 1.5s ease-in-out;
+}
+.b{
+  stroke-dasharray: 0 1540;
+    stroke-dashoffset: 1540;
+}
+.b.white{
+  stroke: white;
+  stroke-width:0;
+  transition: stroke .2s ease-in-out, stroke-width .000000001 ease-in-out ;
+}
+.right.out{
+    transform: translate(400px, 450px);
+}
+.left.out{
+  transform: translate(-900px, 00px);
+}
