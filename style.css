@@ -19,6 +19,7 @@
 }
 html{
   height: 100%;
+  overflow: hidden;
 }
 body{
   width: 100vw;
@@ -58,7 +59,7 @@ body:before{
   position: relative;
   z-index: 5;
   color: #0E75BC;
-  font-size: calc(16px + (64)*(100vw - 320px)/(1920 - 320));
+  font-size: calc(20px + (100)*(100vw - 320px)/(1920 - 320));
   text-transform: uppercase;
   margin: 0;
 }
@@ -77,11 +78,11 @@ body:before{
 
 }
 .cover{
-  height: 100%;
-  width: auto;
+  height: auto;
+  width: 100vw;
 }
 .b, .a{
-  transition: all 1.5s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 .b{
   stroke-dasharray: 0 1540;
@@ -93,8 +94,21 @@ body:before{
   transition: stroke .2s ease-in-out, stroke-width .000000001 ease-in-out ;
 }
 .right.out{
-    transform: translate(400px, 450px);
+    transform: translate(950px, 1150px);
 }
 .left.out{
-  transform: translate(-900px, 00px);
+  transform: translate(-1100px, -500px);
+}
+
+@media (orientation : landscape) {
+  .cover{
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (orientation : portrait) {
+  .cover{
+    height: 100%;
+    width: 100%;
+  }
 }
